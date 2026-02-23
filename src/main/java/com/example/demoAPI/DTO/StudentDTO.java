@@ -2,20 +2,19 @@ package com.example.demoAPI.DTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class StudentDTO {
 
-    private String name;
+
     private long id;
+    private String name;
     private String email;
-// constructor
-    public StudentDTO(long id, String name, String email) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
-    }
+
+
 
 //    public StudentDTO() {
 //    }
