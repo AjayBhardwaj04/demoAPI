@@ -1,15 +1,12 @@
 package com.example.demoAPI.Conntroler;
 
 import com.example.demoAPI.DTO.StudentDTO;
-import com.example.demoAPI.Entity.Student;
-import com.example.demoAPI.Repositorie.studentRepository;
 import com.example.demoAPI.SERVICE.StudentService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.Mapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.support.JstlUtils;
 
 import java.util.List;
 
@@ -22,11 +19,15 @@ public class StudentController {
 
 @GetMapping("/student")
    public List<StudentDTO> getStudents(){
-        return studentService.getStudents();//arrer Cannot resolve method 'findAll' in 'Repository'
+        return studentService.getAllStudents();//arrer Cannot resolve method 'findAll' in 'Repository'
 }
-@GetMapping("/student/id")
-    private List<StudentDTO> getStudentId() {
-    return  studentService.getStudents();
+@GetMapping("/student/{id}")
+public StudentDTO getStudentId(@PathVariable Long id){
+   return studentService.getStudentId(id);
+
 }
+
+
+
 
 }
