@@ -1,4 +1,12 @@
 package com.example.demoAPI.SERVICE;
 
-public interface StudentServive {
+import com.example.demoAPI.DTO.StudentDTO;
+
+import java.util.List;
+
+public interface StudentService {
+    List<StudentDTO> getAllStudents();
+
+    StudentDTO
+    getStudentId(Long id);
 }
